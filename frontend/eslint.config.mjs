@@ -9,10 +9,14 @@ const eslintConfig = defineConfig([
   // Override default ignores of eslint-config-next.
   {
     plugins: {
+      '@typescript-eslint': typescript,
       prettier: prettierPlugin,
     },
     rules: {
-      'prettier/prettier': ['error', { singleQuote: true, endOfLine: 'auto' }],
+      'prettier/prettier': [
+        'error',
+        { singleQuote: true, endOfLine: 'auto' },
+      ],
     },
   },
   globalIgnores([
