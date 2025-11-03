@@ -11,5 +11,6 @@ export { default as Contact } from './sections/Contact';
 export { default as Donate } from './sections/Donate';
 export { default as OurValues } from './sections/OurValues';
 export { default as Projects } from './sections/Projects';
+export { default as Transparency } from './sections/Transparency';
 export { default as Volunteer } from './sections/Volunteer';
 
