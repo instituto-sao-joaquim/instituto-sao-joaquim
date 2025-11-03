@@ -1,0 +1,29 @@
+import { ReactNode } from 'react';
+import Button from './Button';
+
+interface CardProps {
+  icon: ReactNode;
+  title: string;
+  text: string;
+  stroke?: string;
+  fill?: string;
+  bgColor?: string;
+  borderColor?: string;
+  textButton?: string;
+  bgButton?: string;
+  textColorButton?: string;
+  scrollToId: string;
+}
+
+export default function Card({ icon, title, text, stroke, fill, bgColor, borderColor, textButton, bgButton, textColorButton, scrollToId }: CardProps) {
+  return (
+    <div className={`${bgColor} backdrop-blur-md border ${borderColor} rounded-lg p-6 flex flex-col gap-2 text-left shadow-md flex-1 lg:max-w-78`}>
+      <div className={`${stroke} ${fill}`}>{icon}</div>
+      <h2 className="text-neutral-900 text-xl">{title}</h2>
+      <p className="text-sm text-neutral-700 mb-2">{text}</p>
+      <Button scrollToId={scrollToId} bgColor={bgButton} textColor={textColorButton}>
+        {textButton}
+      </Button>
+    </div>
+  );
+}
