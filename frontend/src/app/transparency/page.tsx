@@ -1,3 +1,5 @@
+"use client";
+
 import { Transparency } from "@/components";
 
 export default function Home() {

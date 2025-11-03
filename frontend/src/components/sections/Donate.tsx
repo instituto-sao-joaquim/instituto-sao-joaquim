@@ -4,7 +4,7 @@ import { useState } from "react";
 import { FiPaperclip } from "react-icons/fi";
 import { Badge } from "../";
 
-export default function Donations() {
+export default function Donate() {
   const [result, setResult] = useState("");
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
