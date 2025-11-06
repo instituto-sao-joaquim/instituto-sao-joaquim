@@ -13,24 +13,22 @@ export default function Contact() {
     const form = event.currentTarget;
     const formData = new FormData(form);
 
-    // Adicione a chave de acesso do Web3Forms
-    formData.append("access_key", process.env.NEXT_PUBLIC_API_FORM as string);
+    formData.append("_captcha", "false");
+    formData.append("_template", "box");
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch(`https://formsubmit.co/${process.env.NEXT_PUBLIC_FORM_EMAIL}`, {
         method: "POST",
-        body: formData
+        body: formData,
       });
-      const data = await response.json();
 
-      if (data.success) {
+      if (response.ok) {
         setResult("Success!");
-        form.reset(); // Limpa o formulário
+        form.reset();
       } else {
         setResult("Error");
       }
 
-      // Limpa a mensagem de feedback após 3 segundos
       setTimeout(() => setResult(""), 3000);
     } catch (error) {
       console.error(error);
@@ -145,8 +143,10 @@ export default function Contact() {
           {/* Coluna 2 - Formulário */}
           <div className="bg-white shadow-md rounded-xl p-8 border border-gray-200 flex flex-col justify-between h-full">
             <form onSubmit={onSubmit} className="flex flex-col gap-5 h-full">
-              {/* Nome completo */}
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="box" />
               <div>
+                {/* Nome completo */}
                 <label className="block text-sm font-medium text-gray-700 mb-1">Nome completo</label>
                 <input
                   type="text"
@@ -202,6 +202,9 @@ export default function Contact() {
                   required
                 />
               </div>
+
+              {/* Honeypot spam protection */}
+              <input type="text" name="honeypot" style={{ display: "none" }} />
 
               {/* Botão */}
               <button
