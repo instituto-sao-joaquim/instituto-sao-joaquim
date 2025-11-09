@@ -5,7 +5,7 @@ import { useState } from "react";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { Badge } from "../";
 
-export default function Contact() {
+export default function FormVolunteer() {
   const [result, setResult] = useState("");
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -25,7 +25,7 @@ export default function Contact() {
           tel: formData.get("tel"),
           subject: formData.get("subject"),
           message: formData.get("message"),
-          formType: formData.get("formType"),
+          formType: formData.get("formType"), // Voluntário
         }),
         headers: {
           "Content-Type": "application/json",
@@ -52,19 +52,18 @@ export default function Contact() {
   return (
     <section
       className="relative w-full bg-neutral-50 mt-10 py-20 px-3 flex flex-col items-center justify-center"
-      id="contact"
+      id="volunteer"
     >
       <div className="relative z-10 w-full max-w-5xl">
         {/* Cabeçalho */}
         <div className="text-center mb-16">
-          <Badge text="Entre em Contato" bgColor="bg-cyan-600/20" textColor="text-cyan-700" />
-          <h2 className="text-4xl font-bold text-gray-900">Vamos Conversar?</h2>
+          <Badge text="Seja Voluntário" bgColor="bg-cyan-600/20" textColor="text-cyan-700" />
+          <h2 className="text-4xl font-bold text-gray-900">Junte-se a Nós!</h2>
           <p className="mt-2 text-gray-700 max-w-2xl mx-auto">
-            Tem alguma dúvida ou quer saber como pode contribuir? Entre em contato conosco!
+            Quer contribuir e fazer a diferença? Preencha o formulário e venha ser um voluntário do Instituto!
           </p>
         </div>
 
-        {/* Duas colunas com altura igual */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl w-full items-stretch content-stretch min-h-[500px]">
           {/* Coluna 1 - Informações */}
           <div className="flex flex-col justify-between h-full">
@@ -116,7 +115,7 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Redes sociais + Horário juntos ao final */}
+            {/* Redes sociais + Horário */}
             <div className="space-y-6 mt-8">
               <div className="p-5 bg-orange-50/40 border border-cyan-600/30 rounded-xl">
                 <h2 className="text-gray-700 font-medium mb-2">Nossas Redes Sociais</h2>
@@ -142,24 +141,17 @@ export default function Contact() {
                   </a>
                 </div>
               </div>
-
-              <div className="p-5 bg-cyan-50/40 border border-cyan-600/30 rounded-xl">
-                <h2 className="text-gray-700 font-medium mb-2">Horário de Atendimento</h2>
-                <p className="text-gray-500 text-sm">Segunda a Sexta: 8h às 11h e 13h às 16h</p>
-                <p className="text-gray-500 text-sm">Sábado: Fechado</p>
-                <p className="text-gray-500 text-sm">Domingo: Fechado</p>
-              </div>
             </div>
           </div>
 
           {/* Coluna 2 - Formulário */}
           <div className="bg-white shadow-md rounded-xl p-4 md:p-8 border border-gray-200 flex flex-col justify-between h-full">
             <form onSubmit={onSubmit} className="flex flex-col gap-5 h-full">
-              <input type="hidden" name="formType" value="Contato" />
+              <input type="hidden" name="formType" value="Voluntariado" />
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="box" />
+
               <div>
-                {/* Nome completo */}
                 <label className="block text-sm font-medium text-gray-700 mb-1">Nome completo</label>
                 <input
                   type="text"
@@ -170,7 +162,6 @@ export default function Contact() {
                 />
               </div>
 
-              {/* Email */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
                 <input
@@ -182,7 +173,6 @@ export default function Contact() {
                 />
               </div>
 
-              {/* Telefone */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Telefone</label>
                 <input
@@ -193,30 +183,27 @@ export default function Contact() {
                 />
               </div>
 
-              {/* Assunto */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Assunto</label>
                 <input
                   type="text"
                   name="subject"
-                  placeholder="Sobre o que deseja falar?"
+                  placeholder="Por que deseja ser voluntário?"
                   className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-600 focus:outline-none text-gray-400 transition ease-in-out"
                 />
               </div>
 
-              {/* Mensagem */}
               <div className="max-h-20">
                 <label className="block text-sm font-medium text-gray-700 mb-1">Mensagem</label>
                 <textarea
                   rows={5}
                   name="message"
-                  placeholder="Escreva sua mensagem..."
+                  placeholder="Conte um pouco sobre você..."
                   className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-600 focus:outline-none resize-none h-full text-gray-400 transition ease-in-out"
                   required
                 />
               </div>
 
-              {/* Botão */}
               <button
                 type="submit"
                 className="text-white text-sm font-medium py-2 rounded-lg transition mt-4 cursor-pointer hover:brightness-90"
@@ -225,18 +212,17 @@ export default function Contact() {
                     "linear-gradient(90deg, rgba(0,188,125,0.89) 0%, rgba(245,74,0,0.8) 50%, rgba(0,146,184,0.89) 100%)",
                 }}
               >
-                Enviar Mensagem
+                Enviar Inscrição
               </button>
 
-              {/* Feedback */}
               {result && (
                 <p
                   className={`mt-2 text-center font-medium ${result === "Success!" ? "text-emerald-600" : "text-red-500"
                     }`}
                 >
                   {result === "Success!"
-                    ? "Sua mensagem foi enviada com sucesso! 🎉"
-                    : "Ops! Ocorreu um erro ao enviar a mensagem. Tente novamente."}
+                    ? "Sua inscrição foi enviada com sucesso! 🎉"
+                    : "Ops! Ocorreu um erro ao enviar a inscrição. Tente novamente."}
                 </p>
               )}
             </form>

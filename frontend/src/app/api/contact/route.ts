@@ -5,35 +5,32 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(req: Request) {
   try {
     const data = await req.json();
+    const { name, tel, email, subject, message, formType } = data;
 
-    const { name, tel, email, subject, message } = data;
-
-    // Aqui você decide para onde vai o e-mail
-    let to = process.env.RESEND_CONTACT_EMAIL; // padrão
-
-    if (subject?.toLowerCase().includes("volunt") || subject?.toLowerCase().includes("voluntário")) {
-      to = process.env.RESEND_VOLUNTEER_EMAIL;
+    // Validação básica
+    if (!name || !email || !subject || !message || !formType) {
+      return Response.json(
+        { error: "Campos obrigatórios ausentes." },
+        { status: 400 }
+      );
     }
 
-    if (subject?.toLowerCase().includes("doa") || subject?.toLowerCase().includes("doação")) {
-      to = process.env.RESEND_DONATION_EMAIL;
-    }
+    const to = process.env.RESEND_EMAIL;
+    if (!to) throw new Error("Nenhum e-mail de destino configurado no .env");
 
-    // Garante que o "to" é válido e vira array
-    if (!to) {
-      throw new Error("Nenhum e-mail de destino foi configurado no .env");
-    }
+    // Monta o subject incluindo o tipo de formulário
+    const emailSubject = `[${formType.toUpperCase()}] ${subject}`;
 
     const response = await resend.emails.send({
-      from: `${process.env.RESEND_FROM}`,
+      from: process.env.RESEND_FROM!,
       to: [to],
-      subject: `Nova mensagem: ${subject}`,
+      subject: emailSubject,
       replyTo: email,
       html: `
         <h3>Nova mensagem do site</h3>
         <p><strong>Nome:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Telefone:</strong> ${tel}</p>
+        <p><strong>Telefone:</strong> ${tel || "Não informado"}</p>
         <p><strong>Assunto:</strong> ${subject}</p>
         <p><strong>Mensagem:</strong><br/>${message}</p>
       `,

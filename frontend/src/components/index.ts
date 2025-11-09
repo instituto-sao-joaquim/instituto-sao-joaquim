@@ -12,6 +12,8 @@ export { default as Campaigns } from './sections/Campaigns';
 export { default as Contact } from './sections/Contact';
 export { default as CountOnMe } from './sections/CountOnMe';
 export { default as Donate } from './sections/Donate';
+export { default as FormCorporate } from './sections/FormCorporate';
+export { default as FormVolunteer } from './sections/FormVolunteer';
 export { default as OurValues } from './sections/OurValues';
 export { default as Projects } from './sections/Projects';
 export { default as Transparency } from './sections/Transparency';
