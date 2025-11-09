@@ -14,7 +14,7 @@ export default function About() {
         <div className="text-center mb-16">
           <Badge text="Sobre Nós" bgColor='bg-emerald-600/20' textColor='text-emerald-800' />
           <h2 className="text-4xl font-bold text-gray-900">Quem Somos</h2>
-          <p className="mt-2 text-gray-700 mx-auto">
+          <p className="mt-2 text-gray-700 mx-auto max-w-2xl">
             O Instituto São Joaquim atua no desenvolvimento integral da comunidade, promovendo programas estratégicos de alimentação, educação ambiental, cidadania e inclusão social.
           </p>
         </div>
@@ -71,6 +71,7 @@ export default function About() {
           <p className="text-left text-gray-700">
             Para isso, atua por meio de núcleos especializados, como o Núcleo de Educação, voltado para o acompanhamento pedagógico e apoio às crianças; o Núcleo de Esporte, que promove atividades físicas e recreação; o Núcleo de Desenvolvimento Institucional e Sustentabilidade, que gerencia os voluntários, coordena os principais programas e garante a continuidade das ações; o Núcleo de Comunicação e Engajamento, responsável pela divulgação e relacionamento com a comunidade; e o Núcleo de Contabilidade e Apoio Financeiro, que organiza e presta contas das contribuições e recursos do Instituto. Nosso propósito é construir, desde agora, uma história marcada pela colaboração e pelo cuidado com o outro.
           </p>
+
 
           <div className="lg:flex-2 text-left">
             <h2 className='text-2xl text-gray-900 font-bold mb-2'>Nossos Objetivos</h2>

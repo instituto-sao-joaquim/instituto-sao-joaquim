@@ -1,8 +1,9 @@
 "use client";
 
 import { CubeIcon, GlobeAmericasIcon } from '@heroicons/react/24/solid';
+import Link from 'next/link';
 import { FaHandsHelping } from 'react-icons/fa';
-import { Badge, Button } from '../';
+import { Badge } from '../';
 import Card from '../common/CardWithButton';
 
 export default function Projects() {
@@ -78,7 +79,7 @@ export default function Projects() {
             Entre em contato conosco e descubra como você pode participar ou apoiar nossas iniciativas.
           </p>
 
-          <Button scrollToId='contact' bgColor="bg-gray-100" textColor="text-gray-700">Fale Conosco</Button>
+          <Link href="/contact" className="px-4 py-1.5 rounded-xl transition hover:brightness-90 text-sm text-gray-700 bg-gray-100">Fale Conosco</Link>
         </div>
 
       </div>

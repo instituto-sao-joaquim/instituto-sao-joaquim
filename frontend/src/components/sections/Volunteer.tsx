@@ -59,7 +59,7 @@ export default function Volunteer() {
               textButton='Doar Agora'
               textColorButton='text-white'
               bgButton='bg-cyan-600'
-              href='/'
+              href='/donate'
             />
           </div>
         </div>
