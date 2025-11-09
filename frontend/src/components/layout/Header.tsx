@@ -66,7 +66,6 @@ export default function Header() {
     { label: "Início", scrollId: "home" },
     { label: "Quem Somos", scrollId: "about" },
     { label: "Programas", scrollId: "projects" },
-    { label: "Conte Comigo", href: "/conte-comigo" },
     { label: "Campanhas", href: "/campaigns" },
     { label: "Voluntariado", scrollId: "volunteer" },
   ];
@@ -76,7 +75,6 @@ export default function Header() {
     { label: "Início", scrollId: "home" },
     { label: "Quem Somos", scrollId: "about" },
     { label: "Programas", scrollId: "projects" },
-    { label: "Conte Comigo", href: "/conte-comigo" },
     { label: "Campanhas", href: "/campaigns" },
     { label: "Voluntariado", scrollId: "volunteer" },
   ];
@@ -94,12 +92,6 @@ export default function Header() {
             height={120}
             className="rounded-full"
           />
-          <div className="hidden lg:flex flex-col">
-            <span className="font-bold text-lg text-gray-800">
-              Instituto São Joaquim
-            </span>
-            <span className="text-xs text-gray-400">Transformando vidas</span>
-          </div>
         </div>
 
         {/* MENU DESKTOP */}

@@ -8,7 +8,7 @@ export default function Donate() {
   const [fileName, setFileName] = useState<string>("");
   const [copied, setCopied] = useState(false);
 
-  const pixKey = "institutosaojoaquim.isj@gmail.com";
+  const pixKey = "61.696.288/0001-75";
 
   const handleCopy = () => {
     navigator.clipboard.writeText(pixKey);
@@ -68,7 +68,7 @@ export default function Donate() {
           <Badge text="Faça sua Doação" bgColor="bg-emerald-600/20" textColor="text-emerald-700" />
           <h2 className="text-4xl font-bold text-gray-900">Contribua com Nossa Causa</h2>
           <p className="mt-2 text-gray-700 max-w-2xl mx-auto">
-            Você pode fazer sua doação pelo QR code abaixo. Quer receber um recibo simples? Preencha o formulário e aguarde o contato da ONG solicitando o comprovante de doação.
+            Você pode fazer sua doação pelo QR code abaixo ou através da chave Pix informada. Quer receber um recibo simples? Preencha o formulário e aguarde o contato da ONG solicitando o comprovante de doação.
           </p>
         </div>
 
@@ -78,7 +78,7 @@ export default function Donate() {
             <h2 className="text-gray-700 font-medium mb-2 text-center">Doe pelo PIX</h2>
             <img src="/qrcode.png" alt="QR Code de Doação" className="w-60 h-60 object-contain" />
             <p className="text-gray-700 text-center">
-              Escaneie o QR code acima para fazer sua doação de forma rápida e segura.
+              Escaneie o QR code acima ou copie a chave Pix abaixo para fazer sua doação de forma rápida e segura.
             </p>
             <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-center gap-2 w-full">
               <input
@@ -170,10 +170,6 @@ export default function Donate() {
             </form>
           </div>
         </div>
-
-        <p className="text-gray-500 text-sm text-justify mt-4">
-          *No momento, as doações estão sendo recebidas temporariamente pela coordenadora administrativa da ONG, Tatiana Araújo de Sousa. Todas as contribuições serão integralmente destinadas aos projetos da instituição. Em breve, a conta oficial da ONG estará ativa.
-        </p>
       </div>
     </section>
   );
