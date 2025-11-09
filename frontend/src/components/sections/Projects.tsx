@@ -59,7 +59,7 @@ export default function Projects() {
               textButton='Saiba Mais'
               textColorButton='text-white'
               bgButton='bg-cyan-600'
-              href='donate'
+              href='conte-comigo'
             />
           </div>
         </div>
