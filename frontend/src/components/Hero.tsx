@@ -1,20 +1,21 @@
 "use client";
 
 import { FireIcon, HeartIcon, UserGroupIcon } from '@heroicons/react/24/outline';
+import { LuBaby } from 'react-icons/lu';
 import { Badge, CardHero } from '.';
 import Button from './common/Button';
 
 export default function Hero() {
   return (
     <section
-      className="relative w-full min-h-screen bg-cover bg-center flex items-center justify-center"
+      className="relative w-full min-h-screen bg-cover bg-center flex items-center justify-center px-3"
       style={{ backgroundImage: "url('/hero.png')" }}
     >
       {/* Overlay escura */}
       <div className="absolute inset-0 bg-black opacity-75"></div>
 
       {/* Conteúdo central */}
-      <div className="relative flex flex-col items-center justify-center z-10 py-30 min-w-full max-w-5xl text-center text-white px-6">
+      <div className="relative flex flex-col items-center justify-center z-10 py-30 min-w-full max-w-5xl text-center text-white">
         <Badge icon={<HeartIcon className="w-5 h-5 stroke-[1.5] stroke-emerald-500" />} gap="gap-2" text="Transformando vidas desde 2025" bgColor='bg-emerald-600/30' borderColor='border-emerald-800' textColor='text-white' />
 
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">Instituto São Joaquim</h1>
@@ -30,18 +31,18 @@ export default function Hero() {
         </div>
 
         <div className="flex flex-col sm:flex-row justify-center gap-4 w-full">
-          <CardHero icon={<UserGroupIcon className="w-9 h-9 stroke-[1.5] stroke-emerald-500" />}
-            title="Vidas Impactadas"
-            value="100+" />
+          <CardHero icon={<LuBaby className="w-9 h-9 stroke-[1.5]  stroke-emerald-500" />}
+            title="Crianças atendidas"
+            value={60} />
 
           {/* Nutrir para Crescer, Documento é Direito, Alimenta+, Viver Verde*/}
           <CardHero icon={<FireIcon className="w-9 h-9 stroke-[1.5] stroke-orange-500" />}
-            title="Programas Ativos"
-            value="4" />
+            title="Pessoas atendidas em ação comunitária"
+            value={500} plus={true} />
 
-          <CardHero icon={<HeartIcon className="w-9 h-9 stroke-[1.5] stroke-cyan-500" />}
+          <CardHero icon={<UserGroupIcon className="w-9 h-9 stroke-[1.5] stroke-cyan-500" />}
             title="Voluntários"
-            value="200+" />
+            value={20} plus={true} />
         </div>
       </div>
     </section>
