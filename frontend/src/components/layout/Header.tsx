@@ -17,7 +17,6 @@ export default function Header() {
   const handleScroll = useCallback(
     (id: string) => {
       if (pathname !== "/") {
-        // salva o destino e vai para home
         sessionStorage.setItem("scrollTo", id);
         router.push("/");
         return;
@@ -26,10 +25,14 @@ export default function Header() {
       const element = document.getElementById(id);
       if (element) {
         const headerOffset = 70;
-        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+        const elementPosition =
+          element.getBoundingClientRect().top + window.scrollY;
         const offsetPosition = elementPosition - headerOffset;
 
-        window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
         setMenuOpen(false);
       }
     },
@@ -38,34 +41,61 @@ export default function Header() {
 
   useEffect(() => {
     const targetId = sessionStorage.getItem("scrollTo");
+
     if (targetId && pathname === "/") {
       setTimeout(() => {
         const element = document.getElementById(targetId);
         if (element) {
           const headerOffset = 70;
-          const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+          const elementPosition =
+            element.getBoundingClientRect().top + window.scrollY;
           const offsetPosition = elementPosition - headerOffset;
-          window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
         }
         sessionStorage.removeItem("scrollTo");
-      }, 300); // espera um pouco até a página renderizar
+      }, 300);
     }
   }, [pathname]);
+
+  // MENU DESKTOP CONFIG
+  const desktopItems = [
+    { label: "Início", scrollId: "home" },
+    { label: "Quem Somos", scrollId: "about" },
+    { label: "Programas", scrollId: "projects" },
+    { label: "Conte Comigo", href: "/conte-comigo" },
+    { label: "Campanhas", href: "/campaigns" },
+    { label: "Voluntariado", scrollId: "volunteer" },
+  ];
+
+  // MENU MOBILE CONFIG
+  const mobileItems = [
+    { label: "Início", scrollId: "home" },
+    { label: "Quem Somos", scrollId: "about" },
+    { label: "Programas", scrollId: "projects" },
+    { label: "Conte Comigo", href: "/conte-comigo" },
+    { label: "Campanhas", href: "/campaigns" },
+    { label: "Voluntariado", scrollId: "volunteer" },
+  ];
 
   return (
     <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 h-20">
+
         {/* LOGO */}
         <div className="flex items-center space-x-3">
           <Image
-            src="/logo.jpg"
+            src="/isj-logo.png"
             alt="Instituto São Joaquim"
-            width={50}
-            height={50}
+            width={120}
+            height={120}
             className="rounded-full"
           />
-          <div className="flex flex-col">
-            <span className="font-bold text-xl text-gray-800">
+          <div className="hidden lg:flex flex-col">
+            <span className="font-bold text-lg text-gray-800">
               Instituto São Joaquim
             </span>
             <span className="text-xs text-gray-400">Transformando vidas</span>
@@ -74,30 +104,39 @@ export default function Header() {
 
         {/* MENU DESKTOP */}
         <nav className="hidden lg:flex space-x-8">
-          {[
-            { label: "Início", id: "home" },
-            { label: "Sobre", id: "about" },
-            { label: "Programas", id: "projects" },
-            { label: "Voluntariado", id: "volunteer" },
-          ].map(({ label, id }) => (
-            <button
-              key={id}
-              onClick={() => handleScroll(id)}
-              className="cursor-pointer relative text-gray-700 hover:text-green-600 after:block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-green-600 after:transition-all after:duration-300 hover:after:w-full"
-            >
-              {label}
-            </button>
-          ))}
+          {desktopItems.map((item) =>
+            item.href ? (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="cursor-pointer relative text-gray-700 hover:text-green-600 after:block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-green-600 after:transition-all after:duration-300 hover:after:w-full"
+              >
+                {item.label}
+              </Link>
+            ) : (
+              <button
+                key={item.label}
+                onClick={() => handleScroll(item.scrollId!)}
+                className="cursor-pointer relative text-gray-700 hover:text-green-600 after:block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-green-600 after:transition-all after:duration-300 hover:after:w-full"
+              >
+                {item.label}
+              </button>
+            )
+          )}
         </nav>
 
-        {/* BOTÕES À DIREITA (Desktop) */}
+        {/* BOTÕES DESKTOP */}
         <div className="hidden lg:flex items-center space-x-4">
           <button
-            onClick={() => handleScroll('contact')}
-            className="px-4 py-1.5 border border-gray-700 rounded-xl hover:bg-gray-100 text-gray-700 transition cursor-pointer"
+            onClick={() => {
+              setMenuOpen(false);
+              handleScroll("contact");
+            }}
+            className="cursor-pointer px-4 py-2 border border-gray-700 rounded-xl bg-gray-100 hover:bg-gray-300 text-gray-700 transition text-center"
           >
             Contato
           </button>
+
           <Link
             href="/donate"
             className="px-4 py-1.5 bg-orange-400 text-white hover:bg-orange-500 transition rounded-xl"
@@ -105,7 +144,6 @@ export default function Header() {
             Doe Agora
           </Link>
         </div>
-
 
         {/* BOTÃO MOBILE */}
         <button
@@ -121,14 +159,14 @@ export default function Header() {
         </button>
       </div>
 
-      {/* MENU MOBILE (Overlay) */}
+      {/* OVERLAY */}
       <div
         className={`fixed inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-300 ${menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
           } lg:hidden`}
         onClick={() => setMenuOpen(false)}
       ></div>
 
-      {/* MENU MOBILE (Painel) */}
+      {/* MENU MOBILE */}
       <div
         className={`fixed top-0 right-0 h-full w-3/4 max-w-xs bg-white shadow-lg transition-transform duration-300 transform ${menuOpen ? "translate-x-0" : "translate-x-full"
           } lg:hidden z-60`}
@@ -143,33 +181,41 @@ export default function Header() {
         </div>
 
         <nav className="flex flex-col space-y-6 px-6 py-8 text-gray-700">
-          {[
-            { label: "Início", id: "home" },
-            { label: "Sobre", id: "about" },
-            { label: "Programas", id: "projects" },
-            { label: "Voluntariado", id: "volunters" },
-            { label: "Equipe", id: "team" },
-          ].map(({ label, id }) => (
-            <button
-              key={id}
-              onClick={() => handleScroll(id)}
-              className="text-lg text-left hover:text-green-600 transition"
-            >
-              {label}
-            </button>
-          ))}
+          {mobileItems.map((item) =>
+            item.href ? (
+              <Link
+                key={item.label}
+                href={item.href}
+                onClick={() => setMenuOpen(false)}
+                className="text-lg text-left hover:text-green-600 transition"
+              >
+                {item.label}
+              </Link>
+            ) : (
+              <button
+                key={item.label}
+                onClick={() => handleScroll(item.scrollId!)}
+                className="text-lg text-left hover:text-green-600 transition"
+              >
+                {item.label}
+              </button>
+            )
+          )}
 
           <hr className="border-gray-200" />
 
-          <Link
-            href="#contato"
-            onClick={() => setMenuOpen(false)}
-            className="px-4 py-2 border border-gray-700 rounded-xl hover:bg-gray-100 text-gray-700 transition text-center"
+          <button
+            onClick={() => {
+              setMenuOpen(false);
+              handleScroll("contact");
+            }}
+            className="px-4 py-2 border border-gray-700 rounded-xl bg-gray-100 hover:bg-gray-300 text-gray-700 transition text-center"
           >
             Contato
-          </Link>
+          </button>
+
           <Link
-            href="/doar"
+            href="/donate"
             onClick={() => setMenuOpen(false)}
             className="px-4 py-2 bg-orange-400 text-white hover:bg-orange-500 transition rounded-xl text-center"
           >

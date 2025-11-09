@@ -18,7 +18,6 @@ export default function Footer() {
   const handleScroll = useCallback(
     (id: string) => {
       if (pathname !== "/") {
-        // salva o destino e vai para home
         sessionStorage.setItem("scrollTo", id);
         router.push("/");
         return;
@@ -27,10 +26,14 @@ export default function Footer() {
       const element = document.getElementById(id);
       if (element) {
         const headerOffset = 70;
-        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+        const elementPosition =
+          element.getBoundingClientRect().top + window.scrollY;
         const offsetPosition = elementPosition - headerOffset;
 
-        window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
       }
     },
     [pathname, router]
@@ -43,14 +46,28 @@ export default function Footer() {
         const element = document.getElementById(targetId);
         if (element) {
           const headerOffset = 70;
-          const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+          const elementPosition =
+            element.getBoundingClientRect().top + window.scrollY;
           const offsetPosition = elementPosition - headerOffset;
-          window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
         }
         sessionStorage.removeItem("scrollTo");
-      }, 300); // espera um pouco até a página renderizar
+      }, 300);
     }
   }, [pathname]);
+
+  const footerItems = [
+    { label: "Início", scrollId: "home" },
+    { label: "Quem Somos", scrollId: "about" },
+    { label: "Programas", scrollId: "projects" },
+    { label: "Conte Comigo", href: "/conte-comigo" },
+    { label: "Campanhas", href: "/campaigns" },
+    { label: "Voluntariado", scrollId: "volunteer" },
+  ];
 
   return (
     <footer className="bg-gray-900 text-gray-300 px-6 py-12 md:px-12 w-full">
@@ -114,22 +131,31 @@ export default function Footer() {
         {/* Coluna 2 - Navegação principal */}
         <div>
           <h3 className="text-white font-semibold text-lg mb-4">Navegação</h3>
-          <nav className="flex flex-col items-start space-y-2 text-sm">
-            {[
-              { label: "Início", id: "home" },
-              { label: "Sobre", id: "about" },
-              { label: "Programas", id: "projects" },
-              { label: "Voluntariado", id: "volunteer" },
-            ].map(({ label, id }) => (
-              <button
-                key={id}
-                onClick={() => handleScroll(id)}
-                className="cursor-pointer hover:text-white transition"
-              >
-                {label}
-              </button>
-            ))}
-          </nav>
+          <ul className="flex flex-col items-start space-y-2 text-sm">
+
+            {footerItems.map((item) =>
+              item.href ? (
+                <li key={item.label}>
+                  <Link
+                    href={item.href}
+                    className="hover:text-white transition"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ) : (
+                <li key={item.label}>
+                  <button
+                    onClick={() => handleScroll(item.scrollId!)}
+                    className="text-left hover:text-white transition cursor-pointer"
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              )
+            )}
+
+          </ul>
         </div>
 
         {/* Coluna 3 - Programas */}
@@ -137,23 +163,18 @@ export default function Footer() {
           <h3 className="text-white font-semibold text-lg mb-4">Programas</h3>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link href="#nutrir" className="hover:text-white transition">
-                Nutrir para Crescer
+              <Link href="/viver-verde" className="hover:text-white transition">
+                Viver Verde
               </Link>
             </li>
             <li>
-              <Link href="#documento" className="hover:text-white transition">
-                Documento é Direito
-              </Link>
-            </li>
-            <li>
-              <Link href="#alimenta" className="hover:text-white transition">
+              <Link href="/alimenta-mais" className="hover:text-white transition">
                 Alimenta+
               </Link>
             </li>
             <li>
-              <Link href="#viver" className="hover:text-white transition">
-                Viver Verde
+              <Link href="/conte-comigo" className="hover:text-white transition">
+                Conte Comigo
               </Link>
             </li>
           </ul>
