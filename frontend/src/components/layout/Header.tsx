@@ -83,10 +83,10 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 h-20">
+      <div className="max-w-7xl mx-auto flex items-center justify-between h-20">
 
         {/* LOGO */}
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center justify-around space-x-3">
           <Image
             src="/isj-logo.png"
             alt="Instituto São Joaquim"
@@ -127,15 +127,12 @@ export default function Header() {
 
         {/* BOTÕES DESKTOP */}
         <div className="hidden lg:flex items-center space-x-4">
-          <button
-            onClick={() => {
-              setMenuOpen(false);
-              handleScroll("contact");
-            }}
-            className="cursor-pointer px-4 py-2 border border-gray-700 rounded-xl bg-gray-100 hover:bg-gray-300 text-gray-700 transition text-center"
+          <Link
+            href="/contact"
+            className="px-4 py-1.5 bg-gray-100 hover:bg-gray-300 text-gray-700 transition rounded-xl"
           >
             Contato
-          </button>
+          </Link>
 
           <Link
             href="/donate"

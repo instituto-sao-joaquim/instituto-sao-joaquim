@@ -70,7 +70,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-gray-900 text-gray-300 px-6 py-12 md:px-12 w-full">
+    <footer className="bg-gray-900 text-gray-300 px-6 pt-12 pb-6 md:px-12 w-full">
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* Coluna 1 - Logo + Nome + Slogan + Redes sociais */}
         <div>
