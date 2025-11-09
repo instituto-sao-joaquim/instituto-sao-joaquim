@@ -7,6 +7,7 @@ export { default as Hero } from './Hero';
 export { default as Footer } from './layout/Footer';
 export { default as Header } from './layout/Header';
 export { default as About } from './sections/About';
+export { default as AlimentaMais } from './sections/AlimentaMais';
 export { default as Campaigns } from './sections/Campaigns';
 export { default as Contact } from './sections/Contact';
 export { default as CountOnMe } from './sections/CountOnMe';
@@ -14,5 +15,6 @@ export { default as Donate } from './sections/Donate';
 export { default as OurValues } from './sections/OurValues';
 export { default as Projects } from './sections/Projects';
 export { default as Transparency } from './sections/Transparency';
+export { default as ViverVerde } from './sections/ViverVerde';
 export { default as Volunteer } from './sections/Volunteer';
 
