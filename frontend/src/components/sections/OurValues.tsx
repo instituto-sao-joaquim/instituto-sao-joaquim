@@ -6,11 +6,11 @@ import Card from '../common/Card';
 export default function OurValues() {
   return (
     <section
-      className="relative w-full bg-cover bg-center flex items-center justify-center bg-white"
+      className="relative w-full bg-cover bg-center flex items-center justify-center bg-white px-3"
       id='ourValues'
     >
       {/* Conteúdo central */}
-      <div className="relative z-10 py-15 max-w-5xl text-center px-6">
+      <div className="relative z-10 py-15 max-w-5xl text-center">
         <div className="text-center mb-16">
           <Badge text="Nossos Valores" bgColor='bg-orange-400/20' textColor='text-orange-500' />
           <h2 className="text-4xl font-bold text-gray-900">O Que Nos Move</h2>
@@ -62,7 +62,7 @@ export default function OurValues() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-center text-center gap-4 rounded-xl w-full px-6 py-10 text-gray-700 bg-neutral-50"
+        <div className="flex flex-col items-center justify-center text-center gap-4 rounded-xl w-full p-3 md:px-6 md:py-10 text-gray-700 bg-neutral-50"
         >
           <h2 className="text-xl sm:text-3xl md:text-2xl font-bold">
             Certificações e Reconhecimentos
@@ -73,10 +73,10 @@ export default function OurValues() {
           </p>
 
           <div>
-            <div className="inline-flex flex-row items-center justify-center bg-red-400/20 backdrop-blur-md text-red-500 px-4 py-1.5 rounded-full text-xs font-medium shadow-md mb-4">
+            <div className="inline-flex flex-row items-center justify-center bg-red-400/20 backdrop-blur-md text-red-500 px-2 md:px-4 py-1.5 rounded-full text-xs font-medium shadow-md mb-4">
               Em Andamento
             </div>
-            <div className='flex gap-6'>
+            <div className='flex flex-col md:flex-row gap-6'>
               <div className="bg-white backdrop-blur-md rounded-lg p-6 flex flex-col items-center gap-2 text-left shadow-md flex-1 lg:max-w-60">
                 <div className='flex items-center justify-center w-15 h-15 rounded-full bg-emerald-600'>
                   <FaLandmark className="w-5 h-5 fill-white" />

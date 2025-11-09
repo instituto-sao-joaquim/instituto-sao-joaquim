@@ -17,12 +17,23 @@ export default function Contact() {
     formData.append("_template", "box");
 
     try {
-      const response = await fetch(`https://formsubmit.co/${process.env.NEXT_PUBLIC_FORM_EMAIL}`, {
+      const response = await fetch("/api/contact", {
         method: "POST",
-        body: formData,
+        body: JSON.stringify({
+          name: formData.get("name"),
+          email: formData.get("email"),
+          tel: formData.get("tel"),
+          subject: formData.get("subject"),
+          message: formData.get("message"),
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
       });
 
-      if (response.ok) {
+      const data = await response.json();
+
+      if (data.success) {
         setResult("Success!");
         form.reset();
       } else {
@@ -39,10 +50,10 @@ export default function Contact() {
 
   return (
     <section
-      className="relative w-full bg-neutral-50 py-20 px-6 flex flex-col items-center justify-center"
+      className="relative w-full bg-neutral-50 py-20 px-3 flex flex-col items-center justify-center"
       id="contact"
     >
-      <div className="relative z-10 px-6 w-full max-w-5xl">
+      <div className="relative z-10 w-full max-w-5xl">
         {/* Cabeçalho */}
         <div className="text-center mb-16">
           <Badge text="Entre em Contato" bgColor="bg-cyan-600/20" textColor="text-cyan-700" />
@@ -141,7 +152,7 @@ export default function Contact() {
           </div>
 
           {/* Coluna 2 - Formulário */}
-          <div className="bg-white shadow-md rounded-xl p-8 border border-gray-200 flex flex-col justify-between h-full">
+          <div className="bg-white shadow-md rounded-xl p-4 md:p-8 border border-gray-200 flex flex-col justify-between h-full">
             <form onSubmit={onSubmit} className="flex flex-col gap-5 h-full">
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="box" />
@@ -202,9 +213,6 @@ export default function Contact() {
                   required
                 />
               </div>
-
-              {/* Honeypot spam protection */}
-              <input type="text" name="honeypot" style={{ display: "none" }} />
 
               {/* Botão */}
               <button

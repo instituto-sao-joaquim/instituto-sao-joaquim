@@ -9,11 +9,11 @@ import Card from '../common/CardWithButton';
 export default function Volunteer() {
   return (
     <section
-      className="relative w-full bg-cover bg-center flex items-center justify-center bg-neutral-50"
+      className="relative w-full bg-cover bg-center flex items-center justify-center bg-neutral-50 px-3"
       id='volunteer'
     >
       {/* Conteúdo central */}
-      <div className="relative z-10 py-15 max-w-5xl text-center px-6">
+      <div className="relative z-10 py-15 max-w-5xl text-center">
         <div className="text-center mb-16">
           <Badge text="Participe" bgColor='bg-emerald-600/20' textColor='text-emerald-800' />
           <h2 className="text-4xl font-bold text-gray-900">Faça Parte da Transformação</h2>
@@ -34,7 +34,7 @@ export default function Volunteer() {
               textButton='Seja Voluntário'
               textColorButton='text-white'
               bgButton='bg-emerald-500'
-              scrollToId='forms'
+              href='/'
             />
 
 
@@ -47,7 +47,7 @@ export default function Volunteer() {
               textButton='Seja Parceiro'
               textColorButton='text-white'
               bgButton='bg-orange-500'
-              scrollToId='forms'
+              href='/'
             />
 
             <Card
@@ -59,7 +59,7 @@ export default function Volunteer() {
               textButton='Doar Agora'
               textColorButton='text-white'
               bgButton='bg-cyan-600'
-              scrollToId='forms'
+              href='/'
             />
           </div>
         </div>
