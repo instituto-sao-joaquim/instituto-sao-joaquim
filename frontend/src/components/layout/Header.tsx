@@ -19,7 +19,7 @@ export default function Header() {
       if (pathname !== "/") {
         sessionStorage.setItem("scrollTo", id);
         router.push("/");
-        return;
+        setMenuOpen(false);
       }
 
       const element = document.getElementById(id);
@@ -101,7 +101,7 @@ export default function Header() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="cursor-pointer relative text-gray-700 hover:text-green-600 after:block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-green-600 after:transition-all after:duration-300 hover:after:w-full"
+                className="cursor-pointer relative text-gray-700 hover:text-brand-green after:block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-brand-green after:transition-all after:duration-300 hover:after:w-full"
               >
                 {item.label}
               </Link>
@@ -109,7 +109,7 @@ export default function Header() {
               <button
                 key={item.label}
                 onClick={() => handleScroll(item.scrollId!)}
-                className="cursor-pointer relative text-gray-700 hover:text-green-600 after:block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-green-600 after:transition-all after:duration-300 hover:after:w-full"
+                className="cursor-pointer relative text-gray-700 hover:text-brand-green after:block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-brand-green after:transition-all after:duration-300 hover:after:w-full"
               >
                 {item.label}
               </button>
@@ -128,7 +128,7 @@ export default function Header() {
 
           <Link
             href="/donate"
-            className="px-4 py-1.5 bg-orange-400 text-white hover:bg-orange-500 transition rounded-xl"
+            className="px-4 py-1.5 bg-dark-orange text-white hover:brightness-90 transition rounded-xl"
           >
             Doe Agora
           </Link>
@@ -136,7 +136,7 @@ export default function Header() {
 
         {/* BOTÃO MOBILE */}
         <button
-          className="lg:hidden p-2 text-gray-700 hover:text-green-600"
+          className="lg:hidden p-2 text-gray-700 hover:text-brand-green"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Abrir menu"
         >
@@ -176,7 +176,7 @@ export default function Header() {
                 key={item.label}
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
-                className="text-lg text-left hover:text-green-600 transition"
+                className="text-lg text-left hover:text-brand-green transition"
               >
                 {item.label}
               </Link>
@@ -184,7 +184,7 @@ export default function Header() {
               <button
                 key={item.label}
                 onClick={() => handleScroll(item.scrollId!)}
-                className="text-lg text-left hover:text-green-600 transition"
+                className="text-lg text-left hover:text-brand-green transition"
               >
                 {item.label}
               </button>
@@ -193,20 +193,17 @@ export default function Header() {
 
           <hr className="border-gray-200" />
 
-          <button
-            onClick={() => {
-              setMenuOpen(false);
-              handleScroll("contact");
-            }}
-            className="px-4 py-2 border border-gray-700 rounded-xl bg-gray-100 hover:bg-gray-300 text-gray-700 transition text-center"
+          <Link
+            href="/contact"
+            className="px-4 py-1.5 bg-gray-100 hover:bg-gray-300 text-gray-700 transition rounded-xl"
           >
             Contato
-          </button>
+          </Link>
 
           <Link
             href="/donate"
             onClick={() => setMenuOpen(false)}
-            className="px-4 py-2 bg-orange-400 text-white hover:bg-orange-500 transition rounded-xl text-center"
+            className="px-4 py-2 bg-orange-400 text-white hover:bg-dark-orange transition rounded-xl text-center"
           >
             Doe Agora
           </Link>

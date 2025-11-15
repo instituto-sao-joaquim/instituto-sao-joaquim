@@ -2,7 +2,7 @@
 
 import { EnvelopeIcon, MapPinIcon, PhoneIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
-import { FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { Badge } from "../";
 
 export default function Contact() {
@@ -140,12 +140,22 @@ export default function Contact() {
                   >
                     <FaWhatsapp className="w-5 h-5" />
                   </a>
+
+                  <a
+                    href="https://www.linkedin.com/in/institutosaojoaquim/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="border border-cyan-600/30 p-2 rounded-full text-gray-700 hover:bg-orange-500 hover:text-white transition ease-in-out"
+                    aria-label="LinkedIn"
+                  >
+                    <FaLinkedin className="w-5 h-5" />
+                  </a>
                 </div>
               </div>
 
               <div className="p-5 bg-cyan-50/40 border border-cyan-600/30 rounded-xl">
                 <h2 className="text-gray-700 font-medium mb-2">Horário de Atendimento</h2>
-                <p className="text-gray-500 text-sm">Segunda a Sexta: 8h às 11h e 13h às 16h</p>
+                <p className="text-gray-500 text-sm">Segunda a Sexta: 8h às 11h e 14h às 17h</p>
                 <p className="text-gray-500 text-sm">Sábado: Fechado</p>
                 <p className="text-gray-500 text-sm">Domingo: Fechado</p>
               </div>

@@ -9,7 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useCallback, useEffect } from "react";
-import { FaInstagram, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
+import { FaInstagram, FaLinkedin, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
 
 export default function Footer() {
   const router = useRouter();
@@ -64,9 +64,14 @@ export default function Footer() {
     { label: "Início", scrollId: "home" },
     { label: "Quem Somos", scrollId: "about" },
     { label: "Programas", scrollId: "projects" },
-    { label: "Conte Comigo", href: "/conte-comigo" },
     { label: "Campanhas", href: "/campaigns" },
     { label: "Voluntariado", scrollId: "volunteer" },
+  ];
+
+  const footerPrograms = [
+    { label: "Viver Verde", href: "/programs/viver-verde" },
+    { label: "Alimenta+", href: "/programs/alimenta-mais" },
+    { label: "Conte Comigo", href: "/conte-comigo" },
   ];
 
   return (
@@ -105,15 +110,7 @@ export default function Footer() {
               className="hover:text-white transition"
               aria-label="Instagram"
             >
-              <FaInstagram className="w-6 h-6 hover:text-orange-400 transition" />
-            </a>
-
-            <a
-              href="mailto:institutosaojoaquim.isj@gmail.com"
-              className="hover:text-white transition"
-              aria-label="Email"
-            >
-              <EnvelopeIcon className="w-6 h-6 hover:text-orange-400 transition" />
+              <FaInstagram className="w-6 h-6 hover:text-dark-orange transition" />
             </a>
 
             <a
@@ -123,7 +120,25 @@ export default function Footer() {
               className="hover:text-white transition"
               aria-label="WhatsApp"
             >
-              <FaWhatsapp className="w-6 h-6 hover:text-orange-400 transition" />
+              <FaWhatsapp className="w-6 h-6 hover:text-dark-orange transition" />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/institutosaojoaquim/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin className="w-6 h-6 hover:text-dark-orange transition" />
+            </a>
+
+            <a
+              href="mailto:institutosaojoaquim.isj@gmail.com"
+              className="hover:text-white transition"
+              aria-label="Email"
+            >
+              <EnvelopeIcon className="w-6 h-6 hover:text-dark-orange transition" />
             </a>
           </div>
         </div>
@@ -162,21 +177,27 @@ export default function Footer() {
         <div>
           <h3 className="text-white font-semibold text-lg mb-4">Programas</h3>
           <ul className="space-y-2 text-sm">
-            <li>
-              <Link href="/viver-verde" className="hover:text-white transition">
-                Viver Verde
-              </Link>
-            </li>
-            <li>
-              <Link href="/alimenta-mais" className="hover:text-white transition">
-                Alimenta+
-              </Link>
-            </li>
-            <li>
-              <Link href="/conte-comigo" className="hover:text-white transition">
-                Conte Comigo
-              </Link>
-            </li>
+            {footerPrograms.map((item) =>
+              item.href ? (
+                <li key={item.label}>
+                  <Link
+                    href={item.href}
+                    className="hover:text-white transition"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ) : (
+                <li key={item.label}>
+                  <button
+                    onClick={() => handleScroll(item.href!)}
+                    className="text-left hover:text-white transition cursor-pointer"
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              )
+            )}
           </ul>
         </div>
 
@@ -185,11 +206,11 @@ export default function Footer() {
           <h3 className="text-white font-semibold text-lg mb-4">Contato</h3>
           <ul className="space-y-3 text-sm">
             <li className="flex items-start gap-2">
-              <FaMapMarkerAlt className="w-5 h-5 mt-0.5 text-emerald-400" />
+              <FaMapMarkerAlt className="w-5 h-5 mt-0.5 text-light-green" />
               <span>Rua Pedro Dantas, 335 - Dias Macedo, Fortaleza, CE | CEP: 60860-150</span>
             </li>
             <li className="flex items-center gap-2">
-              <EnvelopeIcon className="w-5 h-5 text-emerald-400" />
+              <EnvelopeIcon className="w-5 h-5 text-light-green" />
               <a
                 href="mailto:institutosaojoaquim.isj@gmail.com"
                 className="hover:text-white transition"
@@ -198,7 +219,7 @@ export default function Footer() {
               </a>
             </li>
             <li className="flex items-center gap-2">
-              <PhoneIcon className="w-5 h-5 text-emerald-400" />
+              <PhoneIcon className="w-5 h-5 text-light-green" />
               <a
                 href="tel:+5585994118816 "
                 className="hover:text-white transition"
@@ -207,8 +228,8 @@ export default function Footer() {
               </a>
             </li>
             <li className="flex items-center gap-2">
-              <ClockIcon className="w-5 h-5 text-emerald-400" />
-              <span>Seg a Sex — 8h às 11h e 13h às 16h</span>
+              <ClockIcon className="w-5 h-5 text-light-green" />
+              <span>Seg a Sex — 8h às 11h e 14h às 17h</span>
             </li>
           </ul>
         </div>

@@ -25,7 +25,7 @@ export default function SectionBadge({
 }: SectionBadgeProps) {
   return (
     <div
-      className={`inline-flex flex-row items-center justify-center ${gap} ${bgColor} backdrop-blur-md ${textColor} border ${borderColor} px-4 py-1.5 rounded-full text-xs font-medium shadow-md ${className} mb-8`}
+      className={`inline-flex flex-row items-center justify-center ${gap} ${bgColor} backdrop-blur-md ${textColor} border ${borderColor} px-4 py-1.5 rounded-full text-xs font-medium shadow-md ${className} mb-6`}
     >
       <span className={`flex items-center justify-center ${stroke} ${fill}`}>{icon}</span>
       {text}

@@ -1,4 +1,48 @@
 @import "tailwindcss";
+@tailwind utilities;
+
+/* Animação de flutuar */
+@keyframes float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+/* Classe utilitária */
+@utility float {
+  animation: float 2s ease-in-out infinite;
+}
+
+/* ======== ANIMAÇÃO DE NEVE ======== */
+
+/* Movimento dos flocos */
+@layer utilities {
+  @keyframes snowflake-fall {
+      0% {
+        transform: translateY(-10%) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      80% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(120vh) rotate(360deg);
+        opacity: 0;
+      }
+  }
+
+  .snowflake {
+    position: absolute;
+    will-change: transform, opacity;
+    animation-name: snowflake-fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+}
+
 
 :root {
   --background: #ffffff;
@@ -10,6 +54,17 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-brand-green: #10b981;
+  --color-light-green: #34d399;
+  --color-dark-green: #059669;
+  --color-transparent-green: rgba(16, 185, 129, 0.2);
+  --color-brand-orange: #fb923c;
+  --color-light-orange: #fdba74;
+  --color-dark-orange: #f97316;
+  --color-brand-blue: #38bdf8;
+  --color-light-blue: #72d8fa;
+  --color-dark-blue: #0284c7;
+  --color-brand-red: #fc2d2d;
 }
 
 @media (prefers-color-scheme: dark) {

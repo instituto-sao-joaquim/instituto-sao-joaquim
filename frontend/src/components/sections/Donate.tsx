@@ -62,7 +62,7 @@ export default function Donate() {
 
   return (
     <section className="relative w-full bg-neutral-50 mt-10 py-20 md:px-6 flex flex-col items-center justify-center" id="donations">
-      <div className="relative z-10 w-full max-w-5xl">
+      <div className="relative z-10 w-full max-w-5xl px-3">
         {/* Cabeçalho */}
         <div className="text-center mb-16">
           <Badge text="Faça sua Doação" bgColor="bg-emerald-600/20" textColor="text-emerald-700" />
