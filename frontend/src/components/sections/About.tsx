@@ -68,16 +68,14 @@ export default function About() {
             </div>
           </div>
 
-          <div className="md:flex-1 lg:flex-3 text-left">
-            <p className="text-gray-700">
-              Para isso, atua por meio de núcleos especializados, como o Núcleo de Educação, voltado para o acompanhamento pedagógico e apoio às crianças; o Núcleo de Esporte, que promove atividades físicas e recreação; o Núcleo de Desenvolvimento Institucional e Sustentabilidade, que gerencia os voluntários, coordena os principais programas e garante a continuidade das ações; o Núcleo de Comunicação e Engajamento, responsável pela divulgação e relacionamento com a comunidade; e o Núcleo de Contabilidade e Apoio Financeiro, que organiza e presta contas das contribuições e recursos do Instituto. Nosso propósito é construir, desde agora, uma história marcada pela colaboração e pelo cuidado com o outro.
-            </p>
-          </div>
-
           <div className="flex flex-col md:flex-row items-start gap-12">
             {/* Texto lateral esquerda */}
             <div className="md:flex-1 lg:flex-3 text-left">
-              <h2 className='text-2xl text-gray-900 font-bold mb-2'>Nossos Objetivos</h2>
+              <p className="text-gray-700">
+                Para isso, atua por meio de núcleos especializados, como o Núcleo de Educação, voltado para o acompanhamento pedagógico e apoio às crianças; o Núcleo de Esporte, que promove atividades físicas e recreação; o Núcleo de Desenvolvimento Institucional e Sustentabilidade, que gerencia os voluntários, coordena os principais programas e garante a continuidade das ações; o Núcleo de Comunicação e Engajamento, responsável pela divulgação e relacionamento com a comunidade; e o Núcleo de Contabilidade e Apoio Financeiro, que organiza e presta contas das contribuições e recursos do Instituto. Nosso propósito é construir, desde agora, uma história marcada pela colaboração e pelo cuidado com o outro.
+              </p>
+
+              <h2 className='text-2xl text-gray-900 font-bold mt-6 mb-2'>Nossos Objetivos</h2>
               <p className="text-gray-700">
                 O Instituto São Joaquim tem como objetivo principal promover o desenvolvimento integral de crianças, famílias e da comunidade do bairro Dias Macedo, por meio de ações socioeducativas, culturais e ambientais. Buscamos fortalecer vínculos familiares e comunitários, estimular a solidariedade e ampliar o acesso a oportunidades que contribuam para uma vida mais digna e sustentável. Atuamos em rede com parceiros, voluntários e apoiadores, acreditando que a transformação social acontece quando caminhamos juntos.
               </p>
