@@ -63,7 +63,7 @@ export default function About() {
             <div className="lg:flex-2 text-left">
               <h2 className='text-2xl text-gray-900 font-bold mb-2'>Nossa História</h2>
               <p className="text-gray-700">
-                O Instituto São Joaquim foi fundado em junho de 2025, no bairro Dias Macedo, em Fortaleza (CE), movido pelo desejo de gerar impacto social positivo na comunidade. Nasceu da união de pessoas comprometidas em promover o desenvolvimento humano e fortalecer vínculos comunitários, com foco especial na infância e nas famílias em situação de vulnerabilidade. Mesmo sendo uma instituição jovem, o Instituto já vem se estruturando para realizar projetos que estimulem a educação, a solidariedade e o protagonismo social. Mesmo sendo uma instituição jovem, o Instituto já vem se estruturando para realizar projetos que estimulem a educação, a solidariedade e o protagonismo social.
+                O Instituto São Joaquim foi fundado em junho de 2025, no bairro Dias Macedo, em Fortaleza (CE), movido pelo desejo de gerar impacto social positivo na comunidade. Nasceu da união de pessoas comprometidas em promover o desenvolvimento humano e fortalecer vínculos comunitários, com foco especial na infância e nas famílias em situação de vulnerabilidade. Mesmo sendo uma instituição jovem, o Instituto já vem se estruturando para realizar projetos que estimulem a educação, a solidariedade e o protagonismo social.
               </p>
             </div>
           </div>
