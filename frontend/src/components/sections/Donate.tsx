@@ -1,7 +1,7 @@
 "use client";
 
+import Badge from '@components/common/SectionBadge';
 import { useState } from "react";
-import { Badge } from "../";
 
 export default function Donate() {
   const [result, setResult] = useState("");

@@ -1,9 +1,9 @@
 "use client";
 
+import Badge from '@components/common/SectionBadge';
 import { EnvelopeIcon, MapPinIcon, PhoneIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
-import { Badge } from "../";
 
 export default function FormCorporate() {
   const [result, setResult] = useState("");

@@ -1,7 +1,7 @@
+import Card from '@components/common/Card';
+import Badge from '@components/common/SectionBadge';
 import { FaHandHoldingHeart, FaHandsHelping, FaLandmark, FaPeopleCarry, FaSeedling, FaShieldAlt } from 'react-icons/fa';
 import { FaHandsHoldingChild } from 'react-icons/fa6';
-import { Badge } from '../';
-import Card from '../common/Card';
 
 export default function OurValues() {
   return (

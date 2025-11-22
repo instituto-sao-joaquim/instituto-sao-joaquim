@@ -1,7 +1,7 @@
+import Card from '@components/common/Card';
+import Badge from '@components/common/SectionBadge';
 import { FireIcon, HeartIcon, ScaleIcon } from '@heroicons/react/24/solid';
 import Image from "next/image";
-import { Badge } from '../';
-import Card from '../common/Card';
 
 export default function About() {
   return (

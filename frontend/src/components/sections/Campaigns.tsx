@@ -1,9 +1,9 @@
 "use client";
 
+import Badge from '@components/common/SectionBadge';
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { Badge } from "..";
 
 type Campaign = {
   title: string;

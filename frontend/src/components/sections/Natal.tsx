@@ -1,8 +1,8 @@
+import CardNatal from "@components/common/CardNatal";
 import Link from "next/link";
 import { FaHeart, FaSeedling } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa6";
 import { SlPresent } from "react-icons/sl";
-import CardNatal from "../common/CardNatal";
 
 export default function Natal() {
   return (
@@ -32,7 +32,7 @@ export default function Natal() {
         <h2 className="text-xl text-white">Natal Solidário</h2>
 
 
-        <span className="bg-dark-orange w-20 h-[3px] rounded-4xl mt-4"></span>
+        <span className="bg-dark-orange w-20 h-[3px] rounded-4xl mt-3"></span>
         <p className="mt-2 text-white max-w-2xl mx-auto my-6">Neste Natal, você pode mudar o dia — e a vida — de uma criança.</p>
 
         <div className="bg-white text-gray-700 px-2 md:px-10 py-12 rounded-4xl text-center">

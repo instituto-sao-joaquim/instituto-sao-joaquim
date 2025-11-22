@@ -1,10 +1,12 @@
 "use client";
 
+import Button from '@components/common/Button';
+import CardWithButton from '@components/common/CardWithButton';
+import Badge from '@components/common/SectionBadge';
 import Image from "next/image";
 import Link from "next/link";
 import { BiDonateHeart } from 'react-icons/bi';
 import { FaFileInvoiceDollar, FaHandHoldingUsd } from "react-icons/fa";
-import { Badge, Button, CardWithButton as Card } from '../index';
 
 export default function CountOnMe() {
   return (
@@ -80,7 +82,7 @@ export default function CountOnMe() {
           {/* 3 Cards abaixo */}
           <div className="flex flex-col justify-center gap-6 mb-16">
             <div className="flex flex-col md:flex-row justify-center items-stretch gap-6">
-              <Card
+              <CardWithButton
                 icon={<FaFileInvoiceDollar className="w-12 h-12 fill-cyan-600" />}
                 title="Doe parte do seu I.R. sem gastar nada"
                 text="Apoie sem gastar a mais: saiba como destinar parte do seu Imposto de Renda ao Instituto."
@@ -93,7 +95,7 @@ export default function CountOnMe() {
               />
 
 
-              <Card
+              <CardWithButton
                 icon={<FaHandHoldingUsd className="w-12 h-12 fill-orange-500" />}
                 title="Contribuição mensal."
                 text="Seja padrinho/madrinha e garanta suporte contínuo às crianças."

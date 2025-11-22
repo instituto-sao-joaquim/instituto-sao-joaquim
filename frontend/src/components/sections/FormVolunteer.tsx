@@ -1,9 +1,9 @@
 "use client";
 
+import Badge from '@components/common/SectionBadge';
 import { EnvelopeIcon, MapPinIcon, PhoneIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
-import { FaInstagram, FaWhatsapp } from "react-icons/fa";
-import { Badge } from "../";
+import { FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 export default function FormVolunteer() {
   const [result, setResult] = useState("");
@@ -138,6 +138,16 @@ export default function FormVolunteer() {
                     aria-label="WhatsApp"
                   >
                     <FaWhatsapp className="w-5 h-5" />
+                  </a>
+
+                  <a
+                    href="https://www.linkedin.com/in/institutosaojoaquim/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="border border-cyan-600/30 p-2 rounded-full text-gray-700 hover:bg-orange-500 hover:text-white transition ease-in-out"
+                    aria-label="LinkedIn"
+                  >
+                    <FaLinkedin className="w-5 h-5" />
                   </a>
                 </div>
               </div>

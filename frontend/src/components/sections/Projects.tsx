@@ -1,10 +1,10 @@
 "use client";
 
+import CardWithButton from '@components/common/CardWithButton';
+import Badge from '@components/common/SectionBadge';
 import { CubeIcon, GlobeAmericasIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
 import { FaHandsHelping } from 'react-icons/fa';
-import { Badge } from '../';
-import Card from '../common/CardWithButton';
 
 export default function Projects() {
   return (
@@ -25,7 +25,7 @@ export default function Projects() {
         {/* 3 Cards abaixo */}
         <div className="flex flex-col justify-center gap-6 mb-16">
           <div className="flex flex-col md:flex-row justify-center items-stretch gap-6">
-            <Card
+            <CardWithButton
               icon={<GlobeAmericasIcon className="w-12 h-12 fill-dark-green" />}
               title="Viver Verde"
               text="Foca na educação ambiental na primeira infância. O Viver Verde também atua junto à comunidade, com ações de
@@ -38,7 +38,7 @@ export default function Projects() {
               href='programs/viver-verde'
             />
 
-            <Card
+            <CardWithButton
               icon={<CubeIcon className="w-12 h-12 fill-dark-orange" />}
               title="Alimenta+"
               text="Atua na área de Segurança Alimentar e Nutricional, sendo o pilar no combate à fome e garantindo o acesso contínuo a alimentos de qualidade para as famílias em vulnerabilidade."
@@ -50,7 +50,7 @@ export default function Projects() {
               href='programs/alimenta-mais'
             />
 
-            <Card
+            <CardWithButton
               icon={<FaHandsHelping className="w-12 h-12 fill-dark-blue" />}
               title="Conte Comigo"
               text="Garante apoio financeiro contínuo às ações do Instituto, organizando contribuições de padrinhos e famílias para fortalecer o desenvolvimento e o bem-estar das crianças atendidas."

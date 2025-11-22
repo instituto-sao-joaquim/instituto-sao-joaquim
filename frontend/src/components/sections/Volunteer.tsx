@@ -1,10 +1,10 @@
 "use client";
 
+import CardWithButton from '@components/common/CardWithButton';
+import Badge from '@components/common/SectionBadge';
 import { BiDonateHeart } from 'react-icons/bi';
 import { GoOrganization } from 'react-icons/go';
 import { MdOutlineVolunteerActivism } from 'react-icons/md';
-import { Badge } from '../';
-import Card from '../common/CardWithButton';
 
 export default function Volunteer() {
   return (
@@ -25,7 +25,7 @@ export default function Volunteer() {
         {/* 3 Cards abaixo */}
         <div className="flex flex-col justify-center gap-6 mb-16">
           <div className="flex flex-col md:flex-row justify-center items-stretch gap-6">
-            <Card
+            <CardWithButton
               icon={<MdOutlineVolunteerActivism className="w-12 h-12 fill-dark-green" />}
               title="Voluntariado"
               text="Doe seu tempo e talento para fazer a diferença. Temos oportunidades em diversas áreas."
@@ -38,7 +38,7 @@ export default function Volunteer() {
             />
 
 
-            <Card
+            <CardWithButton
               icon={<GoOrganization className="w-12 h-12 fill-dark-orange" />}
               title="Parcerias Corporativas"
               text="Empresas que acreditam na responsabilidade social podem ser nossas parceiras."
@@ -50,7 +50,7 @@ export default function Volunteer() {
               href='/volunteers/corporate-collaborations'
             />
 
-            <Card
+            <CardWithButton
               icon={<BiDonateHeart className="w-12 h-12 fill-dark-blue" />}
               title="Doações"
               text="Sua contribuição financeira nos ajuda a ampliar nosso impacto e alcançar mais pessoas."
