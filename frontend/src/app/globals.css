@@ -43,6 +43,30 @@
   }
 }
 
+@keyframes zoomIn {
+  from { transform: scale(0.92); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@utility zoomIn {
+  animation: zoomIn 2s ease-in-out;
+}
+
+.li-dot {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.li-dot::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  background: var(--dot-color, var(--color-dark-green));
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+}
 
 :root {
   --background: #ffffff;
