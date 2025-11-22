@@ -1,9 +1,10 @@
 "use client";
 
+import Button from '@components/common/Button';
+import CardHero from '@components/common/CardHero';
+import Badge from '@components/common/SectionBadge';
 import { FireIcon, HeartIcon, UserGroupIcon } from '@heroicons/react/24/outline';
 import { LuBaby } from 'react-icons/lu';
-import { Badge, CardHero } from '.';
-import Button from './common/Button';
 
 export default function Hero() {
   return (

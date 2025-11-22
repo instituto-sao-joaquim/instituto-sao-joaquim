@@ -1,9 +1,4 @@
 export { default as Button } from './common/Button';
-export { default as Card } from './common/Card';
-export { default as CardHero } from './common/CardHero';
-export { default as CardNatal } from './common/CardNatal';
-export { default as CardWithButton } from './common/CardWithButton';
-export { default as Badge } from './common/SectionBadge';
 export { default as Hero } from './Hero';
 export { default as Footer } from './layout/Footer';
 export { default as Header } from './layout/Header';
