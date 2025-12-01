@@ -124,7 +124,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="https://www.linkedin.com/in/institutosaojoaquim/"
+              href="https://www.linkedin.com/company/institutosaojoaquim"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-white transition"

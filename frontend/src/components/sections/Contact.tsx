@@ -142,7 +142,7 @@ export default function Contact() {
                   </a>
 
                   <a
-                    href="https://www.linkedin.com/in/institutosaojoaquim/"
+                    href="https://www.linkedin.com/company/institutosaojoaquim"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="border border-cyan-600/30 p-2 rounded-full text-gray-700 hover:bg-orange-500 hover:text-white transition ease-in-out"

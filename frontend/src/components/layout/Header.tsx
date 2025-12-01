@@ -195,7 +195,8 @@ export default function Header() {
 
           <Link
             href="/contact"
-            className="px-4 py-1.5 bg-gray-100 hover:bg-gray-300 text-gray-700 transition rounded-xl"
+            className="px-4 py-2 bg-gray-100 hover:bg-gray-300 text-gray-700 transition rounded-xl text-center"
+            onClick={() => setMenuOpen(false)}
           >
             Contato
           </Link>
