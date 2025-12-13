@@ -2,6 +2,7 @@
 
 import Carousel from "@/components/common/Carousel";
 import LiDot from "@/components/common/LiDot";
+import Badge from '@components/common/SectionBadge';
 import Image from "next/image";
 import Link from "next/link";
 import { BiDonateHeart } from "react-icons/bi";
@@ -65,7 +66,7 @@ export default function ViverVerde() {
                 <span className="bg-dark-green w-12 h-12 rounded-2xl flex items-center justify-center">
                   <LuSprout className="w-6 h-6 stroke-white" />
                 </span>
-                <h3 className="text-brand-green text-lg font-bold">Pequenos Guardiões</h3>
+                <h3 className="text-brand-green text-lg font-bold">Pequenos Guardiões da Natureza</h3>
               </div>
 
               <p className="my-2 leading-relaxed">
@@ -83,6 +84,7 @@ export default function ViverVerde() {
           </div>
 
           {/* BLOCO 2 */}
+          {/* ESSE BLOCO AINDA NÃO ESTÁ SENDO DESENVOLVIDO PELA ONG
           <div className="flex flex-col lg:flex-row-reverse items-center gap-8 w-full px-3">
             <div className="w-full lg:w-1/2">
               <Image
@@ -115,9 +117,10 @@ export default function ViverVerde() {
               </ul>
             </div>
           </div>
+          */}
 
           {/* BLOCO 3 */}
-          <div className="flex flex-col lg:flex-row items-center gap-8 w-full px-3">
+          <div className="flex flex-col lg:flex-row-reverse items-center gap-8 w-full px-3">
             <div className="w-full lg:w-1/2">
               <Image
                 src="/images/programs/viver_verde/saboaria.jpeg"
@@ -146,6 +149,42 @@ export default function ViverVerde() {
                 <LiDot color="var(--color-dark-orange)">Ponto de coleta de óleo usado</LiDot>
                 <LiDot color="var(--color-dark-orange)">Autonomia financeira para mulheres</LiDot>
                 <LiDot color="var(--color-dark-orange)">Economia circular e reaproveitamento</LiDot>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* BLOCO 4 */}
+        <div className="flex flex-col items-center pt-5">
+          <Badge text="Implantação prevista para 2026" bgColor='bg-brand-red/10' textColor='text-brand-red' />
+          <div className="flex flex-col lg:flex-row items-center gap-8 w-full px-3">
+            <div className="w-full lg:w-1/2">
+              <Image
+                src="/images/programs/viver_verde/espaco-mais-verde.jpg"
+                alt="Saberes da Terra"
+                width={1200}
+                height={800}
+                className="w-full h-[55vw] sm:h-[45vw] md:h-[40vw] lg:h-80 object-cover rounded-xl shadow-md"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
+              />
+            </div>
+
+            <div className="lg:w-1/2 text-gray-700 px-1 sm:px-3">
+              <div className="flex items-center gap-4 mb-2">
+                <span className="bg-dark-blue w-12 h-12 rounded-2xl flex items-center justify-center">
+                  <LuLeaf className="w-6 h-6 stroke-white" />
+                </span>
+                <h3 className="text-brand-blue text-lg font-bold">Espaço Mais Verde</h3>
+              </div>
+
+              <p className="my-2 leading-relaxed">
+                Transformação de espaços do ISJ em ambientes de aprendizado sustentável, integrando crianças e famílias à educação ambiental, alimentação saudável e responsabilidade ecológica.
+              </p>
+
+              <ul className="flex flex-col gap-2 text-sm">
+                <LiDot color="var(--color-dark-blue)">Construção e manutenção de uma Horta Vertical como modelo de cultivo urbano.</LiDot>
+                <LiDot color="var(--color-dark-blue)">Implantação de Hortas e Espaços Verdes que servem como locais de cultivo, troca de saberes e aprendizagem prática.</LiDot>
+                <LiDot color="var(--color-dark-blue)">Desenvolvimento da Compostagem Comunitária, fechando o ciclo de resíduos e educando sobre o reaproveitamento orgânico.</LiDot>
               </ul>
             </div>
           </div>
