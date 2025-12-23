@@ -1,4 +1,5 @@
 export { default as Button } from './common/Button';
+export { default as Reports } from './common/ReportCard';
 export { default as Hero } from './Hero';
 export { default as Footer } from './layout/Footer';
 export { default as Header } from './layout/Header';

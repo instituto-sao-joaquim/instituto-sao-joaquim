@@ -65,18 +65,20 @@ export default function Header() {
   const desktopItems = [
     { label: "Início", scrollId: "home" },
     { label: "Quem Somos", scrollId: "about" },
-    { label: "Programas", scrollId: "projects" },
-    { label: "Campanhas", href: "/campaigns" },
-    { label: "Voluntariado", scrollId: "volunteer" },
+    { label: "Programas", scrollId: "projetos" },
+    { label: "Campanhas", href: "/campanhas" },
+    { label: "Voluntariado", scrollId: "voluntariado" },
+    { label: "Transparência", href: "/transparencia" },
   ];
 
   // MENU MOBILE CONFIG
   const mobileItems = [
     { label: "Início", scrollId: "home" },
     { label: "Quem Somos", scrollId: "about" },
-    { label: "Programas", scrollId: "projects" },
-    { label: "Campanhas", href: "/campaigns" },
-    { label: "Voluntariado", scrollId: "volunteer" },
+    { label: "Programas", scrollId: "projetos" },
+    { label: "Campanhas", href: "/campanhas" },
+    { label: "Voluntariado", scrollId: "voluntariado" },
+    { label: "Transparência", href: "/transparencia" },
   ];
 
   return (

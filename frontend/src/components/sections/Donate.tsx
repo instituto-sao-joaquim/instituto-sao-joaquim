@@ -61,7 +61,7 @@ export default function Donate() {
   };
 
   return (
-    <section className="relative w-full bg-neutral-50 mt-10 py-20 md:px-6 flex flex-col items-center justify-center" id="donations">
+    <section className="relative w-full bg-neutral-50 mt-10 py-20 md:px-6 flex flex-col items-center justify-center" id="doacoes">
       <div className="relative z-10 w-full max-w-5xl px-3">
         {/* Cabeçalho */}
         <div className="text-center mb-16">

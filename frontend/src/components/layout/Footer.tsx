@@ -63,9 +63,9 @@ export default function Footer() {
   const footerItems = [
     { label: "Início", scrollId: "home" },
     { label: "Quem Somos", scrollId: "about" },
-    { label: "Programas", scrollId: "projects" },
-    { label: "Campanhas", href: "/campaigns" },
-    { label: "Voluntariado", scrollId: "volunteer" },
+    { label: "Programas", scrollId: "projetos" },
+    { label: "Campanhas", href: "/campanhas" },
+    { label: "Voluntariado", scrollId: "voluntariado" },
   ];
 
   const footerPrograms = [

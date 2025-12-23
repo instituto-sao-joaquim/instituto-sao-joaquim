@@ -52,7 +52,7 @@ export default function Contact() {
   return (
     <section
       className="relative w-full bg-neutral-50 mt-10 py-20 px-3 flex flex-col items-center justify-center"
-      id="contact"
+      id="contato"
     >
       <div className="relative z-10 w-full max-w-5xl">
         {/* Cabeçalho */}

@@ -26,7 +26,7 @@ export default function Campaigns() {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="relative w-full bg-neutral-50 mt-10 py-20 px-3 flex flex-col items-center justify-center" id="campaigns">
+    <section className="relative w-full bg-neutral-50 mt-10 py-20 px-3 flex flex-col items-center justify-center" id="campanhas">
       {/* Conteúdo central */}
       <div className="relative z-10 h-full max-w-5xl">
         {/* Cabeçalho */}

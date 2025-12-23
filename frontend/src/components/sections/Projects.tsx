@@ -10,7 +10,7 @@ export default function Projects() {
   return (
     <section
       className="relative w-full bg-cover bg-center flex items-center justify-center bg-white px-3"
-      id='projects'
+      id='projetos'
     >
       {/* Conteúdo central */}
       <div className="relative z-10 py-15 max-w-5xl text-center">
