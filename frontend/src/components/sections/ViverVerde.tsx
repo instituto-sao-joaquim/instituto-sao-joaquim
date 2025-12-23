@@ -228,7 +228,7 @@ export default function ViverVerde() {
 
           <div className="flex flex-col md:flex-row gap-4 mt-4">
             <Link
-              href="/volunteers/volunteer"
+              href="/voluntariado/volunteer"
               className="inline-flex items-center gap-2 bg-white text-dark-green rounded-xl py-3 px-4 text-sm font-bold transition-transform duration-200 hover:scale-105"
             >
               <FaRegHandshake className="w-4 h-4" />
@@ -236,7 +236,7 @@ export default function ViverVerde() {
             </Link>
 
             <Link
-              href="/donate"
+              href="/doacoes"
               className="inline-flex items-center gap-2 bg-white text-dark-green rounded-xl py-3 px-4 text-sm font-bold transition-transform duration-200 hover:scale-105"
             >
               <FiGift className="w-4 h-4" />

@@ -34,7 +34,7 @@ export default function Volunteer() {
               textButton='Seja Voluntário'
               textColorButton='text-white'
               bgButton='bg-dark-green'
-              href='/volunteers/volunteer'
+              href='/voluntariado/volunteer'
             />
 
 
@@ -47,7 +47,7 @@ export default function Volunteer() {
               textButton='Seja Parceiro'
               textColorButton='text-white'
               bgButton='bg-dark-orange'
-              href='/volunteers/corporate-collaborations'
+              href='/voluntariado/corporate-collaborations'
             />
 
             <CardWithButton
@@ -59,7 +59,7 @@ export default function Volunteer() {
               textButton='Doar Agora'
               textColorButton='text-white'
               bgButton='bg-dark-blue'
-              href='/donate'
+              href='/doacoes'
             />
           </div>
         </div>

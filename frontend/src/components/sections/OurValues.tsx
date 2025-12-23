@@ -92,11 +92,8 @@ export default function OurValues() {
                 <p className="text-xs text-neutral-700 mb-2 text-center">Conselho Municipal dos Direitos da Criança e do Adolescente</p>
               </div>
             </div>
-
           </div>
-
         </div>
-
       </div>
     </section>
   );

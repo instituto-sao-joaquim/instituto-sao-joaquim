@@ -19,7 +19,7 @@ export default function Campaigns() {
       text:
         "Um gesto simples, um impacto enorme: com R$10 você transforma o Natal de uma criança.",
       image: "/images/campaigns/natalcapa2.png",
-      link: "/campaigns/natal-encantado",
+      link: "/campanhas/natal-encantado",
     },
   ];
 
@@ -131,7 +131,7 @@ export default function Campaigns() {
                   </Link>
 
                   <Link
-                    href="/donate"
+                    href="/doacoes"
                     className="inline-block px-5 py-1.5 rounded-xl border border-gray-200 text-gray-700 hover:bg-gray-100 transition hover:brightness-90 text-sm text-center"
                   >
                     Quero doar

@@ -26,7 +26,7 @@ export default function CountOnMe() {
             <Button scrollToId='comoParticipar' bgColor="bg-emerald-600" textColor="text-white">
               Como Participar
             </Button>
-            <Link href="/donate" className="text-gray-700 bg-gray-100 text-sm px-4 py-1.5 rounded-xl transition hover:brightness-90">
+            <Link href="/doacoes" className="text-gray-700 bg-gray-100 text-sm px-4 py-1.5 rounded-xl transition hover:brightness-90">
               Doe Agora
             </Link>
           </div>
@@ -64,7 +64,7 @@ export default function CountOnMe() {
               </p>
             </div>
 
-            <Link href="/donate" className="block px-4 py-1.5 rounded-xl transition hover:brightness-90 text-sm text-center w-full md:w-xs mt-4 bg-orange-500 text-white">Tenho interesse em contribuir</Link>
+            <Link href="/doacoes" className="block px-4 py-1.5 rounded-xl transition hover:brightness-90 text-sm text-center w-full md:w-xs mt-4 bg-orange-500 text-white">Tenho interesse em contribuir</Link>
           </div>
         </div>
       </div>
@@ -91,7 +91,7 @@ export default function CountOnMe() {
                 textButton='Saiba como'
                 textColorButton='text-white'
                 bgButton='bg-cyan-600'
-                href='/contact'
+                href='/contato'
               />
 
 
@@ -104,7 +104,7 @@ export default function CountOnMe() {
                 textButton='Saiba como'
                 textColorButton='text-white'
                 bgButton='bg-orange-500'
-                href='/contact'
+                href='/contato'
               />
             </div>
           </div>

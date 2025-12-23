@@ -35,7 +35,7 @@ export default function Projects() {
               textButton='Saiba Mais'
               textColorButton='text-white'
               bgButton='bg-dark-green'
-              href='programs/viver-verde'
+              href='projetos/viver-verde'
             />
 
             <CardWithButton
@@ -47,7 +47,7 @@ export default function Projects() {
               textButton='Saiba Mais'
               textColorButton='text-white'
               bgButton='bg-dark-orange'
-              href='programs/alimenta-mais'
+              href='projetos/alimenta-mais'
             />
 
             <CardWithButton
@@ -79,7 +79,7 @@ export default function Projects() {
             Entre em contato conosco e descubra como você pode participar ou apoiar nossas iniciativas.
           </p>
 
-          <Link href="/contact" className="px-4 py-1.5 rounded-xl transition hover:brightness-90 text-sm text-gray-700 bg-gray-100">Fale Conosco</Link>
+          <Link href="/contato" className="px-4 py-1.5 rounded-xl transition hover:brightness-90 text-sm text-gray-700 bg-gray-100">Fale Conosco</Link>
         </div>
 
       </div>

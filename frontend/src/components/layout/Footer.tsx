@@ -69,8 +69,8 @@ export default function Footer() {
   ];
 
   const footerPrograms = [
-    { label: "Viver Verde", href: "/programs/viver-verde" },
-    { label: "Alimenta+", href: "/programs/alimenta-mais" },
+    { label: "Viver Verde", href: "/projetos/viver-verde" },
+    { label: "Alimenta+", href: "/projetos/alimenta-mais" },
     { label: "Conte Comigo", href: "/conte-comigo" },
   ];
 

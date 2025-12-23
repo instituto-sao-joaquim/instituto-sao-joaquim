@@ -83,7 +83,7 @@ export default function Natal() {
             </div>
 
             <Link
-              href="/donate"
+              href="/doacoes"
               className="border-dark-orange bg-dark-orange rounded-xl py-3 text-white text-sm text-center flex items-center justify-center gap-2 w-50 transition-transform duration-300 ease-out hover:scale-105">
               <SlPresent className="w-4 h-4 fill-white" />
               Fazer uma doação
