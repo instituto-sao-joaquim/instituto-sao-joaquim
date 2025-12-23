@@ -122,14 +122,14 @@ export default function Header() {
         {/* BOTÕES DESKTOP */}
         <div className="hidden lg:flex items-center space-x-4">
           <Link
-            href="/contact"
+            href="/contato"
             className="px-4 py-1.5 bg-gray-100 hover:bg-gray-300 text-gray-700 transition rounded-xl"
           >
             Contato
           </Link>
 
           <Link
-            href="/donate"
+            href="/doacoes"
             className="px-4 py-1.5 bg-dark-orange text-white hover:brightness-90 transition rounded-xl"
           >
             Doe Agora
